@@ -1,0 +1,1 @@
+dotnet ef migrations add "InitDB" --context RealtimedbContext --project Realtime.infrastructure --startup-project Realtime2025 --output-dir Migrations  

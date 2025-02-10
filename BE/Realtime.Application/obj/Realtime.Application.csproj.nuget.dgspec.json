@@ -1,0 +1,227 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\Realtime.Application.csproj": {}
+  },
+  "projects": {
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\Realtime.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\Realtime.Application.csproj",
+        "projectName": "Realtime.Application",
+        "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\Realtime.Application.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj": {
+                "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj"
+              },
+              "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\Realtime.Infrastructure.csproj": {
+                "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\Realtime.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj",
+        "projectName": "Realtime.Domain",
+        "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\Realtime.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\Realtime.Infrastructure.csproj",
+        "projectName": "Realtime.Infrastructure",
+        "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\Realtime.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj": {
+                "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Domain\\Realtime.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Aspnetcore.Identity": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Entityframeworkcore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Entityframeworkcore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

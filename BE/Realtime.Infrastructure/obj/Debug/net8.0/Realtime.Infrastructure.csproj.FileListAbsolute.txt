@@ -1,0 +1,17 @@
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Infrastructure.deps.json
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Infrastructure.runtimeconfig.json
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Infrastructure.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Infrastructure.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Domain.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\bin\Debug\net8.0\Realtime.Domain.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.csproj.AssemblyReference.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.AssemblyInfoInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.AssemblyInfo.cs
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.6A6A668F.Up2Date
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\refint\Realtime.Infrastructure.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\Realtime.Infrastructure.genruntimeconfig.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Infrastructure\obj\Debug\net8.0\ref\Realtime.Infrastructure.dll

@@ -1,0 +1,12 @@
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\bin\Debug\net8.0\Realtime.Domain.deps.json
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\bin\Debug\net8.0\Realtime.Domain.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\bin\Debug\net8.0\Realtime.Domain.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.csproj.AssemblyReference.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.AssemblyInfoInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.AssemblyInfo.cs
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.csproj.CoreCompileInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\refint\Realtime.Domain.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\ref\Realtime.Domain.dll

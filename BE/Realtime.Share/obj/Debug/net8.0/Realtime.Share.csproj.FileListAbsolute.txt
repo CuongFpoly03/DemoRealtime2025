@@ -1,0 +1,11 @@
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\bin\Debug\net8.0\Realtime.Share.deps.json
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\bin\Debug\net8.0\Realtime.Share.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\bin\Debug\net8.0\Realtime.Share.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.GeneratedMSBuildEditorConfig.editorconfig
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.AssemblyInfoInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.AssemblyInfo.cs
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.csproj.CoreCompileInputs.cache
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\refint\Realtime.Share.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.pdb
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\ref\Realtime.Share.dll
