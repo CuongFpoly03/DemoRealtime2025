@@ -15,3 +15,4 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Application\obj\Debug\net8.0\Realtime
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Application\obj\Debug\net8.0\refint\Realtime.Application.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Application\obj\Debug\net8.0\Realtime.Application.pdb
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Application\obj\Debug\net8.0\ref\Realtime.Application.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Application\obj\Debug\net8.0\Realtime.Application.sourcelink.json

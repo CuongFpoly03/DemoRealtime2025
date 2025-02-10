@@ -10,3 +10,4 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Doma
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\refint\Realtime.Domain.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.pdb
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\ref\Realtime.Domain.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Domain\obj\Debug\net8.0\Realtime.Domain.sourcelink.json

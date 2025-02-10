@@ -9,3 +9,4 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\refint\Realtime.Share.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.pdb
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\ref\Realtime.Share.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\obj\Debug\net8.0\Realtime.Share.sourcelink.json

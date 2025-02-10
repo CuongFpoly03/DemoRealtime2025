@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Realtime.Share
-build_property.ProjectDir = D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\
+build_property.ProjectDir = d:\PhuCuongLe\RealtimeDemo2025\BE\Realtime.Share\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
