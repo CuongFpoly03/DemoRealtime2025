@@ -178,3 +178,16 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\Realtime2025.gen
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\ref\Realtime2025.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\Realtime2025.sourcelink.json
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Net.ServerSentEvents.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Threading.Channels.dll

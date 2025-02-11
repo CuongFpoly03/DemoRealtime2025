@@ -12,7 +12,7 @@ namespace Realtime.Application.Commands.TodoCommand
         public DateTime? DueDate { get; set; }
         public bool IsCompleted { get; set; } = false;
         public bool IsExpired { get; set; } = false;
-        public DateTime? CreatedBy { get; set; }
+        public Guid UserId {get; set;}
     }
 
     public class CreateTodoCommandHandler : IRequestHandler<CreateTodoCommand, Todo>

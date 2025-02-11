@@ -19,7 +19,7 @@ namespace Realtime.Domain.Entity
         public bool IsExpired {get; set;}
         public DateTime? CreatedAt {get; set;}
         public DateTime? UpdatedAt {get; set;}
-        public DateTime? CreatedBy {get; set;}
-        public DateTime? UpdatedBy {get; set;}
+        [Description("userId")]
+        public Guid UserId {get; set;}
     }
 }

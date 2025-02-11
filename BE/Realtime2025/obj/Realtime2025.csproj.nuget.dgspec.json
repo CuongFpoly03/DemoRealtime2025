@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj": {}
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj": {}
   },
   "projects": {
     "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime.Application\\Realtime.Application.csproj": {
@@ -291,14 +291,14 @@
         }
       }
     },
-    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj": {
+    "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj",
+        "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj",
         "projectName": "Realtime2025",
-        "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj",
+        "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\obj\\",
+        "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -354,6 +354,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

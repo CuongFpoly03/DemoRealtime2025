@@ -8,6 +8,8 @@ using Realtime.Application.extensions;
 using Realtime.Infrastructure;
 using Realtime.Infrastructure.Extensions;
 using Realtime2025.Configurations;
+using Realtime2025.Hubs;
+using Realtime2025.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,13 +43,22 @@ builder.Services.AddIdentityModule(config);
 
 // add awagger
 builder.Services.AddSwaggerModule();
+
+// add signalR
+builder.Services.AddSignalR();
+builder.Services.AddHostedService<TodoReminderService>();
 #endregion
 
 #region Init & start this Processor. End of it, ready to handle work
 var appConfiguration = GetAppConfiguration();
 // Đăng ký MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
 var app = builder.Build();
+
+// add signalR
+app.MapHub<TodoHub>("/todoHub");
+
 // Configure the HTTP request pipeline.
 IServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
