@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Realtime.Application.Commands.TodoCommand;
 using Realtime.Application.Configurations.Mapper;
 
 namespace Realtime.Application.extensions
@@ -14,6 +11,11 @@ namespace Realtime.Application.extensions
         {
             // Register Automapper
             services.AddAutoMapper(typeof(AutoMapperProfile));
+             // Register MediatR
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssemblies(typeof(CreateTodoCommand).Assembly);
+            });
             return services;
         }
         

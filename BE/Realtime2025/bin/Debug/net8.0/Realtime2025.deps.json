@@ -1249,7 +1249,8 @@
       "Realtime.Application/1.0.0": {
         "dependencies": {
           "Realtime.Domain": "1.0.0",
-          "Realtime.Infrastructure": "1.0.0"
+          "Realtime.Infrastructure": "1.0.0",
+          "MediatR": "12.4.1"
         },
         "runtime": {
           "Realtime.Application.dll": {

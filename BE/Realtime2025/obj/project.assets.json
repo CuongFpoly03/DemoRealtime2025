@@ -2057,7 +2057,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Realtime.Domain": "1.0.0",
-          "Realtime.Infrastructure": "1.0.0"
+          "Realtime.Infrastructure": "1.0.0",
+          "mediatR": "12.4.1"
         },
         "compile": {
           "bin/placeholder/Realtime.Application.dll": {}
@@ -5725,11 +5726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj",
+      "projectUniqueName": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj",
       "projectName": "Realtime2025",
-      "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj",
+      "projectPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\obj\\",
+      "outputPath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

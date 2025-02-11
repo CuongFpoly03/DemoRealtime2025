@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N2QOjzYOtb8=",
+  "dgSpecHash": "GYBeDeswJTw=",
   "success": true,
-  "projectFilePath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\Realtime2025\\Realtime2025.csproj",
+  "projectFilePath": "D:\\PhuCuongLe\\RealtimeDemo2025\\BE\\realtime2025\\Realtime2025.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

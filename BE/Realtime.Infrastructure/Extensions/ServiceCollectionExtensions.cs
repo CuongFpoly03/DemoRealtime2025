@@ -14,6 +14,7 @@ namespace Realtime.Infrastructure.Extensions
             services.AddScoped(typeof(IRealtimeDbContext), typeof(RealtimeDbContext));
             services.AddScoped(typeof(IJwtService), typeof(JwtService));
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(ITodoRepository), typeof(TodoRepository));
             return services;
         }
     }
