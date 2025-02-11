@@ -1,6 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Realtime.Infrastructure.Interfaces;
+using Realtime.Infrastructure.Persistence.Repositories;
+using Realtime.Infrastructure.services;
 
 namespace Realtime.Infrastructure.Extensions
 {
@@ -10,6 +12,8 @@ namespace Realtime.Infrastructure.Extensions
         {
             // Register Repository
             services.AddScoped(typeof(IRealtimeDbContext), typeof(RealtimeDbContext));
+            services.AddScoped(typeof(IJwtService), typeof(JwtService));
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             return services;
         }
     }

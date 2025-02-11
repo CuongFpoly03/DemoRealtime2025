@@ -177,3 +177,4 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\Realtime2025.pdb
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\Realtime2025.genruntimeconfig.cache
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\ref\Realtime2025.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\obj\Debug\net8.0\Realtime2025.sourcelink.json
+D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll

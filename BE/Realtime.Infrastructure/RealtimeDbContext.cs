@@ -15,6 +15,7 @@ namespace Realtime.Infrastructure
         }
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Todo> Todos { get; set; }
 
         #region Seeding data
         public void Seed(CancellationToken cancellationToken = default)

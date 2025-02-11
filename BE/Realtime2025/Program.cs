@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -44,6 +45,8 @@ builder.Services.AddSwaggerModule();
 
 #region Init & start this Processor. End of it, ready to handle work
 var appConfiguration = GetAppConfiguration();
+// Đăng ký MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 IServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
