@@ -11,108 +11,104 @@ using Realtime2025.Configurations;
 using Realtime2025.Hubs;
 using Realtime2025.Services;
 using Serilog;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
-#region Declare info to this Processor
-// Register DB, You can register multiple databases here
-builder.Services.AddDbContext<RealtimeDbContext>(op => op.UseNpgsql(config.GetConnectionString("DatabaseConnectionString")));
+
+#region Dependency Injection Setup
+
+// Register DB Context
+builder.Services.AddDbContext<RealtimeDbContext>(options =>
+    options.UseNpgsql(config.GetConnectionString("DatabaseConnectionString")));
+
 builder.Services.AddInfrastructure(config);
 builder.Services.AddApplication(config);
 
-// Add cors
+// Add HttpContext Accessor
 builder.Services.AddHttpContextAccessor();
-// addcontroller
-builder.Services.AddControllers(opt =>
+
+// Configure Controllers
+builder.Services.AddControllers(options =>
 {
-    opt.Filters.Add(new ProducesAttribute("application/json"));
-    opt.Filters.Add(new ConsumesAttribute("application/json"));
+    options.Filters.Add(new ProducesAttribute("application/json"));
+    options.Filters.Add(new ConsumesAttribute("application/json"));
 
-    // Authorization policy
+    // Require authentication for all controllers
     var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-    opt.Filters.Add(new AuthorizeFilter(policy));
+    options.Filters.Add(new AuthorizeFilter(policy));
 }).AddJsonOptions(options =>
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve
-    );
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
-// add serilog 
-AddSerilog(config, builder.Services);
+// Configure Redis Connection
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+    ConnectionMultiplexer.Connect(config.GetConnectionString("Redis") ?? "localhost:6379"));
+builder.Services.AddScoped<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
 
-// add identity
+// Add Serilog Logging
+ConfigureSerilog(config, builder.Services);
+
+// Add Identity Module
 builder.Services.AddIdentityModule(config);
 
-// add awagger
+// Add Swagger
 builder.Services.AddSwaggerModule();
 
-// add signalR
+// Add SignalR
 builder.Services.AddSignalR();
 builder.Services.AddHostedService<TodoReminderService>();
+
+// Register SignalR Hub
+builder.Services.AddTransient<TodoHub>();
+
 #endregion
 
-#region Init & start this Processor. End of it, ready to handle work
-var appConfiguration = GetAppConfiguration();
-// Đăng ký MediatR
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+#region Application Startup
 
 var app = builder.Build();
 
-// add signalR
-app.MapHub<TodoHub>("/todoHub");
-
-// Configure the HTTP request pipeline.
-IServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
+// Configure Middleware
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-// Configure the Database:
-// - migrate db: (every time) dev env or (production / stagging) with special parameter: /mig, Notice replicas = 1
-// - seeding data for first time run /seed and db tables have no row.
-var isMig = (args.Any(x => x == "mig") || app.Environment.IsDevelopment());
-var isSeed = args.Any(x => x == "seed");
-app.UseApplicationDatabase<RealtimeDbContext>(serviceProvider, isMig);
-app.SeedData(serviceProvider, appConfiguration, isSeed);
+
+// Configure Database Migration & Seeding
+IServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
+bool isMigration = args.Contains("mig") || app.Environment.IsDevelopment();
+bool isSeeding = args.Contains("seed");
+
+app.UseApplicationDatabase<RealtimeDbContext>(serviceProvider, isMigration);
+app.SeedData(serviceProvider, config, isSeeding);
 
 // Configure CORS
 app.UseApplicationCors(builder.Services, builder.Configuration);
 
-// Configure the HTTP request pipeline.
+// Configure HTTP Pipeline
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
+// Configure SignalR
+app.MapHub<TodoHub>("/todoHub");
+
 app.Run();
+
 #endregion
 
-#region startup configuration
-static void AddSerilog(IConfiguration configuration, IServiceCollection services)
+#region Helper Methods
+
+static void ConfigureSerilog(IConfiguration configuration, IServiceCollection services)
 {
     Log.Logger = new LoggerConfiguration()
         .Enrich.FromLogContext()
         .ReadFrom.Configuration(configuration)
-    .CreateLogger();
+        .CreateLogger();
 
     services.AddLogging(loggingBuilder =>
         loggingBuilder.AddSerilog(dispose: true)); // Dispose of logger on shutdown
 }
 
-static IConfiguration GetAppConfiguration()
-{
-    // Actually, before ASP.NET bootstrap, we must rely on environment variable to get environment name
-    // https://docs.microsoft.com/fr-fr/aspnet/core/fundamentals/environments?view=aspnetcore-2.2
-    // Pay attention to casing for Linux environment. By default it's pascal case.
-    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
-    return new ConfigurationBuilder()
-        .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json")
-        .AddJsonFile($"appsettings.{environment}.json", true)
-        .AddEnvironmentVariables()      // Get from OS, Docker Orchestrator
-                                        // .AddCommandLine(args) for any specify action
-        .Build();
-}
 #endregion
-

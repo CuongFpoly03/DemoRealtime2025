@@ -191,3 +191,5 @@ D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\Newtonsoft.Json.
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Net.ServerSentEvents.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
 D:\PhuCuongLe\RealtimeDemo2025\BE\Realtime2025\bin\Debug\net8.0\System.Threading.Channels.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\realtime2025\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\PhuCuongLe\RealtimeDemo2025\BE\realtime2025\bin\Debug\net8.0\StackExchange.Redis.dll

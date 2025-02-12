@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using Realtime.Infrastructure;
 using Realtime2025.Hubs;
 
@@ -7,35 +8,53 @@ namespace Realtime2025.Services
 {
     public class TodoReminderService : BackgroundService
     {
-        private readonly IHubContext<TodoHub> _HubContext;
-        private readonly IServiceScopeFactory _ServiceScopeFactory;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
+        private readonly IHubContext<TodoHub> _hubContext;
+        private readonly IDatabase _redisDb;
 
-        public TodoReminderService(IHubContext<TodoHub> hubContext, IServiceScopeFactory serviceScopeFactory)
+        public TodoReminderService(IServiceScopeFactory serviceScopeFactory, IHubContext<TodoHub> hubContext, IConnectionMultiplexer redis)
         {
-            _HubContext = hubContext;
-            _ServiceScopeFactory = serviceScopeFactory;
+            _serviceScopeFactory = serviceScopeFactory;
+            _hubContext = hubContext;
+            _redisDb = redis.GetDatabase();
         }
-        protected override async Task ExecuteAsync(CancellationToken StoppingToken)
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!StoppingToken.IsCancellationRequested)
+            while (!stoppingToken.IsCancellationRequested)
             {
-                using (var scope = _ServiceScopeFactory.CreateScope())
+                using (var scope = _serviceScopeFactory.CreateScope())
                 {
-                    var dbcontext = scope.ServiceProvider.GetRequiredService<RealtimeDbContext>();
+                    var dbContext = scope.ServiceProvider.GetRequiredService<RealtimeDbContext>();
                     var now = DateTime.UtcNow;
-                    var todos = await dbcontext.Todos
-                    .Where(t => !t.IsCompleted && !t.IsExpired && (t.DueDate.Value - now).TotalMinutes <= 3)
-                    .ToListAsync();
+                    Console.WriteLine($"🕒 Checking todos at: {now}");
+
+                    var todos = await dbContext.Todos
+                        .Where(t => !t.IsCompleted && !t.IsExpired && t.DueDate.HasValue && (t.DueDate.Value - now).TotalMinutes <= 180)
+                        .ToListAsync();
 
                     foreach (var todo in todos)
                     {
-                        await _HubContext.Clients.Group(todo.UserId.ToString()).SendAsync("ReceiveNotification",
-                        $"Công việc '{todo.Title}' sẽ hết hạn sau {(todo.DueDate.Value - now).TotalMinutes} phút!");
+                        string userId = todo.UserId.ToString();
+                        string message = $"Công việc '{todo.Title}' sắp đến hạn sau {(todo.DueDate.Value - now).TotalMinutes} phút!";
+                        
+                        // Lấy connectionId từ Redis
+                        string? connectionId = await _redisDb.StringGetAsync($"User:{userId}");
+                        
+                        if (!string.IsNullOrEmpty(connectionId))
+                        {
+                            // Gửi thông báo trực tiếp đến connectionId của user
+                            await _hubContext.Clients.Client(connectionId).SendAsync("ReceiveNotification", message);
+                            Console.WriteLine($"Sent notification to user {userId} (connectionId: {connectionId}).");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"User {userId} không online, không thể gửi thông báo.");
+                        }
                     }
                 }
-                await Task.Delay(TimeSpan.FromMinutes(3), StoppingToken);
+                await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
             }
         }
-
     }
 }
