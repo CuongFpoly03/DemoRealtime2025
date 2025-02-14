@@ -13,9 +13,13 @@ namespace Realtime.Infrastructure
         {
             return await base.SaveChangesAsync(cancellationToken);
         }
-
+        //session Realtime
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Todo> Todos { get; set; }
+        //sesion Topicsql
+        public DbSet<TopicSQL> TopicSQLs { get; set; }
+        public DbSet<TopicSQL2> TopicSQL2s { get; set; }
+
 
         #region Seeding data
         public void Seed(CancellationToken cancellationToken = default)

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Realtime.Infrastructure;
@@ -11,9 +12,11 @@ using Realtime.Infrastructure;
 namespace Realtime.Infrastructure.Migrations
 {
     [DbContext(typeof(RealtimeDbContext))]
-    partial class RealtimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214150830_AddTableSessionTopicSql")]
+    partial class AddTableSessionTopicSql
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -306,15 +309,12 @@ namespace Realtime.Infrastructure.Migrations
                     b.Property<Guid?>("TopicSQL2Id")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("TopicSQL2Id1")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TopicSQL2Id1");
+                    b.HasIndex("TopicSQL2Id");
 
                     b.ToTable("TopicSQLs");
                 });
@@ -329,7 +329,12 @@ namespace Realtime.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<Guid?>("TopicSQLId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TopicSQLId");
 
                     b.ToTable("TopicSQL2s");
                 });
@@ -400,14 +405,26 @@ namespace Realtime.Infrastructure.Migrations
                 {
                     b.HasOne("Realtime.Domain.Entity.TopicSQL2", "TopicSQL2")
                         .WithMany()
-                        .HasForeignKey("TopicSQL2Id1");
+                        .HasForeignKey("TopicSQL2Id");
 
                     b.Navigation("TopicSQL2");
+                });
+
+            modelBuilder.Entity("Realtime.Domain.Entity.TopicSQL2", b =>
+                {
+                    b.HasOne("Realtime.Domain.Entity.TopicSQL", null)
+                        .WithMany("TopicSQL2s")
+                        .HasForeignKey("TopicSQLId");
                 });
 
             modelBuilder.Entity("Realtime.Domain.Entity.ApplicationUser", b =>
                 {
                     b.Navigation("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Realtime.Domain.Entity.TopicSQL", b =>
+                {
+                    b.Navigation("TopicSQL2s");
                 });
 #pragma warning restore 612, 618
         }

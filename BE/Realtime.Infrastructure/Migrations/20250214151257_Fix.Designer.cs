@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Realtime.Infrastructure;
@@ -11,9 +12,11 @@ using Realtime.Infrastructure;
 namespace Realtime.Infrastructure.Migrations
 {
     [DbContext(typeof(RealtimeDbContext))]
-    partial class RealtimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214151257_Fix")]
+    partial class Fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -328,6 +331,9 @@ namespace Realtime.Infrastructure.Migrations
                     b.Property<string>("NameSQL2")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("TopicSQLId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
