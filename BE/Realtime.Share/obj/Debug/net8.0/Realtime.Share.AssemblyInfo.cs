@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Realtime.Share")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0febea2356e3ce195ea9b4016e853afd5796dc6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a50f0662e01e3bf4fb24a44d9e6dc9f2941846f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Realtime.Share")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Realtime.Share")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Realtime.Infrastructure;
@@ -11,9 +12,11 @@ using Realtime.Infrastructure;
 namespace Realtime.Infrastructure.Migrations
 {
     [DbContext(typeof(RealtimeDbContext))]
-    partial class RealtimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250215035016_DeleteTable2SQL")]
+    partial class DeleteTable2SQL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,52 +220,6 @@ namespace Realtime.Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Realtime.Domain.Entity.Payment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("Currency")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("ProductOrderId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Payments");
-                });
-
-            modelBuilder.Entity("Realtime.Domain.Entity.PaymentWeekHook", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("DataId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DataId");
-
-                    b.ToTable("PaymentWeekHooks");
-                });
-
             modelBuilder.Entity("Realtime.Domain.Entity.RefreshToken", b =>
                 {
                     b.Property<Guid>("Id")
@@ -327,22 +284,6 @@ namespace Realtime.Infrastructure.Migrations
                     b.ToTable("Todos");
                 });
 
-            modelBuilder.Entity("Realtime.Domain.Entity.WebHookData", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("PaymentId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("WebHookDatas");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Realtime.Domain.Entity.ApplicationRole", null)
@@ -394,15 +335,6 @@ namespace Realtime.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Realtime.Domain.Entity.PaymentWeekHook", b =>
-                {
-                    b.HasOne("Realtime.Domain.Entity.WebHookData", "Data")
-                        .WithMany()
-                        .HasForeignKey("DataId");
-
-                    b.Navigation("Data");
-                });
-
             modelBuilder.Entity("Realtime.Domain.Entity.RefreshToken", b =>
                 {
                     b.HasOne("Realtime.Domain.Entity.ApplicationUser", "User")
@@ -412,15 +344,6 @@ namespace Realtime.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Realtime.Domain.Entity.WebHookData", b =>
-                {
-                    b.HasOne("Realtime.Domain.Entity.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId");
-
-                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Realtime.Domain.Entity.ApplicationUser", b =>
