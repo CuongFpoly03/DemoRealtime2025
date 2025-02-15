@@ -9,9 +9,9 @@ namespace Realtime.Infrastructure.Interfaces
         DbSet<RefreshToken> RefreshTokens { get; set; }
         DbSet<Todo> Todos { get; set; }
         // session Weekhook
-        DbSet<Payment> Payments { get; set; }
-        DbSet<PaymentWeekHook> PaymentWeekHooks { get; set; }
-        DbSet<WebHookData> WebHookDatas { get; set; }
+        DbSet<WebhookEvent> WebhookEvents { get; set; }
+        DbSet<WebhookLog> WebhookLogs { get; set; }
+        DbSet<WebhookSubscription> WebhookSubscriptions { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

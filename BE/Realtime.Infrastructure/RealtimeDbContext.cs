@@ -17,9 +17,9 @@ namespace Realtime.Infrastructure
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Todo> Todos { get; set; }
         //sesion Weebhook
-        public DbSet<Payment> Payments { get; set; }
-        public DbSet<PaymentWeekHook> PaymentWeekHooks { get; set; }
-        public DbSet<WebHookData> WebHookDatas { get; set; }
+        public DbSet<WebhookEvent> WebhookEvents { get; set; }
+        public DbSet<WebhookLog> WebhookLogs { get; set; }
+        public DbSet<WebhookSubscription> WebhookSubscriptions { get; set; }
 
         #region Seeding data
         public void Seed(CancellationToken cancellationToken = default)

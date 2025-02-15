@@ -27,6 +27,9 @@ builder.Services.AddApplication(config);
 // Add HttpContext Accessor
 builder.Services.AddHttpContextAccessor();
 
+// Register HttpClientFactory
+builder.Services.AddHttpClient();
+
 // Configure Controllers
 builder.Services.AddControllers(options =>
 {
@@ -40,9 +43,9 @@ builder.Services.AddControllers(options =>
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
 // Configure Redis Connection
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
-    ConnectionMultiplexer.Connect(config.GetConnectionString("Redis") ?? "localhost:6379"));
-builder.Services.AddScoped<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
+// builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+//     ConnectionMultiplexer.Connect(config.GetConnectionString("Redis") ?? "localhost:6379"));
+// builder.Services.AddScoped<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
 
 // Add Serilog Logging
 ConfigureSerilog(config, builder.Services);
@@ -55,10 +58,10 @@ builder.Services.AddSwaggerModule();
 
 // Add SignalR
 builder.Services.AddSignalR();
-builder.Services.AddHostedService<TodoReminderService>();
+// builder.Services.AddHostedService<TodoReminderService>();
 
 // Register SignalR Hub
-builder.Services.AddTransient<TodoHub>();
+// builder.Services.AddTransient<TodoHub>();
 
 #endregion
 

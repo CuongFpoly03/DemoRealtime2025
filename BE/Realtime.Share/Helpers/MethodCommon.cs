@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Realtime.Share.Helpers
 {
-        public static class MethodCommon
+    public static class MethodCommon
     {
         // gen ký tự ngẫu nhiên 
         public static string GenerateCode()
@@ -27,9 +27,9 @@ namespace Realtime.Share.Helpers
         // restfull response 
         public class ResponseData<Data>
         {
-            public int Status {set; get;}
-            public string Message {set; get;} = "";
-            public Data? data {set; get;}
+            public int Status { set; get; }
+            public string Message { set; get; } = "";
+            public Data? data { set; get; }
         }
     }
 }
