@@ -3,9 +3,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Nest;
 using Realtime.Application.extensions;
 using Realtime.Infrastructure;
 using Realtime.Infrastructure.Extensions;
+using Realtime.Infrastructure.Persistence.Repositories;
+using Realtime.Infrastructure.Services;
 using Realtime2025.Configurations;
 using Realtime2025.Hubs;
 using Realtime2025.Services;
@@ -20,6 +24,26 @@ var config = builder.Configuration;
 // Register DB Context
 builder.Services.AddDbContext<RealtimeDbContext>(options =>
     options.UseNpgsql(config.GetConnectionString("DatabaseConnectionString")));
+
+// Đọc cấu hình từ appsettings.json
+builder.Services.Configure<ElasticSearchConfig>(
+    builder.Configuration.GetSection("Elasticsearch"));
+
+// Đăng ký ElasticClient
+builder.Services.AddSingleton(provider =>
+{
+    var config = provider.GetRequiredService<IOptions<ElasticSearchConfig>>().Value;
+    var settings = new ConnectionSettings(new Uri(config.Url))
+        .DefaultIndex(config.IndexName ?? "todos");
+
+    return new ElasticClient(settings);
+});
+
+builder.Services.AddScoped<TodoSearchRepository>();
+
+
+// Đăng ký Hosted Service nếu cần
+builder.Services.AddHostedService<TodoSyncBackgroundService>();
 
 builder.Services.AddInfrastructure(config);
 builder.Services.AddApplication(config);
