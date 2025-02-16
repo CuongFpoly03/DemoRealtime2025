@@ -23,10 +23,11 @@ namespace Realtime.Infrastructure.Persistence.Repositories
         }
 
         // search todo theo keyword
-        public async Task<ISearchResponse<Todo>> SearchTodoAsync(string keyword, CancellationToken cancellationToken = default)
+        public async Task<List<Todo>> SearchTodoAsync(string keyword, CancellationToken cancellationToken = default)
         {
-            var searchResponse = await _elasticClient.SearchAsync<Todo>(s => s.Query(q => q.Match(m => m.Field(f => f.Title).Query(keyword))));
-            return searchResponse;
+            var searchResponse = await _elasticClient.SearchAsync<Todo>(s => s.Query(q => q.Wildcard(w => w.Field(f => f.Title).Value($"*{keyword}*"))));
+
+            return searchResponse.Hits.Select(h => h.Source).ToList();
         }
 
     }

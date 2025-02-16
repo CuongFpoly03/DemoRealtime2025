@@ -1,15 +1,14 @@
 using MediatR;
-using Nest;
 using Realtime.Domain.Entity;
 using Realtime.Infrastructure.Interfaces;
 
 // Định nghĩa alias cho IRequest của MediatR
-using MediatRRequest = MediatR.IRequest<Nest.ISearchResponse<Realtime.Domain.Entity.Todo>>;
+// using MediatRRequest = MediatR.IRequest<Nest.ISearchResponse<Realtime.Domain.Entity.Todo>>;
 
 namespace Realtime.Application.Queries.TodoElasticsearch
 {
     // Định nghĩa Query request
-    public class SearchTodoWithElasticsearchQuery : MediatRRequest
+    public class SearchTodoWithElasticsearchQuery : IRequest<List<Todo>>
     {
         public string Keyword { get; }
 
@@ -20,7 +19,7 @@ namespace Realtime.Application.Queries.TodoElasticsearch
     }
 
     // Handler xử lý truy vấn Elasticsearch
-    public class SearchTodoWithElasticsearchQueryHandler : IRequestHandler<SearchTodoWithElasticsearchQuery, ISearchResponse<Todo>>
+    public class SearchTodoWithElasticsearchQueryHandler : IRequestHandler<SearchTodoWithElasticsearchQuery, List<Todo>>
     {
         private readonly IElasticsearchRepository _elasticsearchRepository;
 
@@ -29,7 +28,7 @@ namespace Realtime.Application.Queries.TodoElasticsearch
             _elasticsearchRepository = elasticsearchRepository;
         }
 
-        public async Task<ISearchResponse<Todo>> Handle(SearchTodoWithElasticsearchQuery request, CancellationToken cancellationToken)
+        public async Task<List<Todo>> Handle(SearchTodoWithElasticsearchQuery request, CancellationToken cancellationToken)
         {
             return await _elasticsearchRepository.SearchTodoAsync(request.Keyword, cancellationToken);
         }

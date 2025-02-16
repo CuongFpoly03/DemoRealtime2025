@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Realtime.Application.Queries.TodoElasticsearch;
+using Realtime.Domain.Entity;
 using Realtime.Share.Helpers;
 
 namespace Realtime2025.Controller
@@ -23,7 +24,7 @@ namespace Realtime2025.Controller
             try
             {
                 var res = await _mediator.Send(new SearchTodoWithElasticsearchQuery(keyword));
-                return StatusCode(200, new MethodCommon.ResponseData<Nest.ISearchResponse<Realtime.Domain.Entity.Todo>>
+                return StatusCode(200, new MethodCommon.ResponseData<List<Todo>>
                 {
                     Status = 200,
                     Message = "Search successFull",
